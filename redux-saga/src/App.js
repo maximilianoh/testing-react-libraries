@@ -10,11 +10,11 @@ function App() {
   return (
     <div className="App">
       <div style={styles}>
-            <div>
-              <Counter />
-              <History />
-            </div>
-        </div>
+          <div>
+            <Counter />
+            <History />
+          </div>
+      </div>
     </div>
   );
 }

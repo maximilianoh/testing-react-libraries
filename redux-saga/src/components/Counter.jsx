@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { counterGroup } from '../ducks/';
 
-function App() {
+function Counter() {
   const dispatch = useDispatch();
   const counter = useSelector(counterGroup.selectors.getCount);
   return (
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default Counter;

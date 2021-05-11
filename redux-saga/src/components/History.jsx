@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
+import { counterGroup } from '../ducks/';
 
 function History() {
-  const history = useSelector(state => state.counterGroup.history);
+  const history = useSelector(counterGroup.selectors.getHistory);
   return (
     <div> 
         <h1> History </h1>

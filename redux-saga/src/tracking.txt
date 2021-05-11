@@ -1,0 +1,35 @@
+#install redux
+yarn add redux
+yarn add react-redux
+
+#create ducks folder
+# src/ducks
+#   counter(feature)
+#       actions.js
+#       index.js
+#       reducers.js
+#       selectors.js
+#       types.js
+#       utils.js
+
+#create store folder and file
+# src/store/index.js
+#add code in src/store/index.js
+import { createStore } from 'redux';
+let store = createStore(todoApp)
+export default store;
+
+
+
+#add code in src/index.js
+# add import Provider and store
+import { Provider } from 'react-redux'
+import store from './store'
+# add Provider and store
+<Provider store={store}>
+      <App />
+</Provider>
+
+
+
+

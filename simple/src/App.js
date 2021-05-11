@@ -1,11 +1,26 @@
+import {useState } from 'react'
 import './App.css';
+import Counter from './components/Counter';
+import History from './components/History';
+const styles = {
+  fontFamily: 'sans-serif',
+  textAlign: 'center',
+};
 
 function App() {
+  const [counter, setCounter] = useState(0);
+  const [history, setHistory] = useState([]);
+
+
+  console.log(counter);
   return (
     <div className="App">
-      <header className="App-header">
-        <button>test</button>
-      </header>
+      <div style={styles}>
+          <div>
+            <Counter counter={counter} setCounter={setCounter} setHistory={setHistory} />
+            <History history={history} />
+          </div>
+      </div>
     </div>
   );
 }

@@ -1,34 +1,18 @@
-import React, {PureComponent} from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import actions from '../ducks/counter/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { counterGroup } from '../ducks/';
 
-class Counter extends PureComponent {
-  render() {
-    return (
-      <div> 
+function App() {
+  const dispatch = useDispatch();
+  const counter = useSelector(state => state.counterGroup.count);
+  return (
+    <div> 
         <h1> Counter </h1>
-        <h1> {this.props.count} </h1>
-        <button onClick={this.props.handleIncrease}> Increase </button>
-        <button onClick={this.props.handleDecrease}> Decrease </button>
-        <button onClick={this.props.handleReset}> Reset </button>
-      </div>
-    )
-  }
+        <h1> {counter} </h1>
+        <button onClick={() => dispatch(counterGroup.actions.increase())}> Increase </button>
+        <button onClick={() => dispatch(counterGroup.actions.decrease())}> Decrease </button>
+        <button onClick={() => dispatch(counterGroup.actions.reset())}> Reset </button>
+    </div>
+  );
 }
 
-function mapStateToProps(state) {
-  return {
-    count: state.counterGroup.count,
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    handleIncrease: actions.increase,
-    handleDecrease: actions.decrease,
-    handleReset: actions.reset,
-  }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default App;

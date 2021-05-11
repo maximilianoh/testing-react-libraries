@@ -1,23 +1,14 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { useSelector } from 'react-redux';
 
-class History extends Component {
-  render() {    
-    return ( 
-      <div> 
+function History() {
+  const history = useSelector(state => state.counterGroup.history);
+  return (
+    <div> 
         <h1> History </h1>
         <ul>
-          {this.props.history.map((item, index) => (<li key={index}> {item} </li>))}
+          {history.map((item, index) => (<li key={index}> {item} </li>))}
         </ul>
       </div>
-    );
-  }
+  );
 }
-
-function mapStateToProps(state) {
-  return {
-    history: state.counterGroup.history,
-  }
-}
-
-export default connect(mapStateToProps)(History);
+export default History;

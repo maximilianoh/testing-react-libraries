@@ -1,11 +1,20 @@
+import Counter from './components/Counter';
+import History from './components/History';
 import './App.css';
+const styles = {
+  fontFamily: 'sans-serif',
+  textAlign: 'center',
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <button>test</button>
-      </header>
+      <div style={styles}>
+            <div>
+              <Counter />
+              <History />
+            </div>
+        </div>
     </div>
   );
 }

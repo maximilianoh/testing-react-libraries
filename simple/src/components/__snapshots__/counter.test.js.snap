@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Chip 1`] = `
+<div>
+  <h1>
+     Counter 
+  </h1>
+  <h1>
+     
+    0
+     
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    Increase
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Decrease
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Reset
+  </button>
+</div>
+`;
+
+exports[`Default Chip 2`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+         Counter 
+      </h1>
+      <h1>
+         
+        0
+         
+      </h1>
+      <button>
+        Increase
+      </button>
+      <button>
+        Decrease
+      </button>
+      <button>
+        Reset
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Default Chip 3`] = `
+<body>
+  <div>
+    <div>
+      <h1>
+         Counter 
+      </h1>
+      <h1>
+         
+        1
+         
+      </h1>
+      <button>
+        Increase
+      </button>
+      <button>
+        Decrease
+      </button>
+      <button>
+        Reset
+      </button>
+    </div>
+  </div>
+</body>
+`;

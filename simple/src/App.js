@@ -11,8 +11,6 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [history, setHistory] = useState([]);
 
-
-  console.log(counter);
   return (
     <div className="App">
       <div style={styles}>

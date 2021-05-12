@@ -10,7 +10,8 @@ function* getTodos(api) {
 }
 
 // Export the saga (todo-saga)
-function* mySaga() {
-    yield takeLatest(types.GET_TODOS_REQUESTED, getTodos, services.getAllTodos);
-}
-export default mySaga;
+const sagas = [
+    takeLatest(types.GET_TODOS_REQUESTED, getTodos, services.getAllTodos)
+];
+  
+export default sagas;

@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import * as ServiceGroups from '../ducks';
-import rootSaga from '../ducks/counter/sagas';
+import { all } from 'redux-saga/effects';
 // Se arma el objeto con todos los reducers { xxxServiceGroup: reducer, ... }
 const reducers = Object.fromEntries(
     Object.entries(ServiceGroups)
@@ -11,10 +11,12 @@ const reducers = Object.fromEntries(
 );
 
 // Se arma el array con todos los sagas
-/*const sagas = Object.entries(ServiceGroups)
-  .reduce((acc, [, value]) => acc.concat(...value.sagas), []);*/
+const sagas = Object.entries(ServiceGroups)
+  .reduce((acc, [, value]) => acc.concat(...value.sagas), []);
  
-
+const rootSaga = function* root() {
+    yield all(sagas);
+};
 /* ------------- Assemble The Reducers ------------- */
 const rootReducer = combineReducers(reducers);
 

@@ -1,35 +1,17 @@
 #install redux
-yarn add redux
-yarn add react-redux
-
-#create ducks folder
-# src/ducks
-#   counter(feature)
-#       actions.js
-#       index.js
-#       reducers.js
-#       selectors.js
-#       types.js
-#       utils.js
-
-#create store folder and file
-# src/store/index.js
-#add code in src/store/index.js
-import { createStore } from 'redux';
-let store = createStore(todoApp)
-export default store;
+yarn add redux-saga
 
 
 
-#add code in src/index.js
-# add import Provider and store
-import { Provider } from 'react-redux'
-import store from './store'
-# add Provider and store
-<Provider store={store}>
-      <App />
-</Provider>
 
 
 
+saga
+Llama a fetchUser cada vez que la acción `USER_FETCH_REQUESTED` es enviada/ejecutada. takeEvery permite que las peticiones se ejecuten de manera concurrente.
+yield takeEvery("USER_FETCH_REQUESTED", fetchUser);
+
+takeLatest No permite solicitudes concurrentes del mismo tipo de accion. Si una accion de tipo `USER_FETCH_REQUESTED` se envía mientras otra está está siendo ejecutada en ese preciso momento, la acción que está siendo ejecutada será cancelada y sólo la última en recibirse será ejecutada.
+yield takeLatest("USER_FETCH_REQUESTED", fetchUser);
+
+takeLatest solo toma la ultima saga y cancela todas las del mismo tipo que estaban ejecutandose antes, mientras takeEvery corre todas las sagas asociadas que se disparen, sin cancelar ninguna.
 

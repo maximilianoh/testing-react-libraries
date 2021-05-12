@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Counter from './Counter';
 
-test('Default Chip', () => {
+test('Default Snap', () => {
     let counter = 0;
     let setCounter = () => {
 
@@ -23,7 +23,7 @@ test('Default Chip', () => {
 });
 
 
-test('Default Chip', () => {
+test('Default Increase', () => {
     let counter = 0;
     let setCounter = (a) => {
         counter = a;

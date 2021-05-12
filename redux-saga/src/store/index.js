@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import * as ServiceGroups from '../ducks';
 import rootSaga from '../ducks/counter/sagas';
-// Se arma el objeto con todos los reducers { ExampleServiceGroup: reducer, ... }
+// Se arma el objeto con todos los reducers { xxxServiceGroup: reducer, ... }
 const reducers = Object.fromEntries(
     Object.entries(ServiceGroups)
       .map(([key, value]) => ([

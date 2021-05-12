@@ -3,7 +3,7 @@ import reducer from './reducers';
 import types from './types';
 import selectors from './selectors';
 import sagas from './sagas';
-import * as services from './services';
+import services from './services';
 
 
 export {

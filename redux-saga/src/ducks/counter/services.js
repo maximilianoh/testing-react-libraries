@@ -7,7 +7,7 @@ const axios = defaultAxios.create({
 });
 
 // Get All Todos
-export const getAllTodos = async () => {
+const getAllTodos = async () => {
   try {
     const todos = await axios.get('todos?_limit=5');
     return todos.data;
@@ -15,4 +15,9 @@ export const getAllTodos = async () => {
     return console.error(err);
   }
 }
-  
+
+const services = {
+  getAllTodos
+};
+
+export default services

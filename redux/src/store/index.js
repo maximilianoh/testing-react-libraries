@@ -7,7 +7,6 @@ const reducers = Object.fromEntries(
         key, value.reducer
       ]))
 );
-console.dir(reducers);
 /* ------------- Assemble The Reducers ------------- */
 const rootReducer = combineReducers(reducers);
 
